@@ -1,0 +1,9 @@
+priority,caller,call_time,status,handler,handle_time
+high,"[77, 'Garald']",2019-05-27 02:18:52.493239,deallocated,"[4, 'Granville', 'manager']",2019-05-27 02:18:54.536917
+high,"[84, 'Kara-lynn']",2019-05-27 02:18:53.281107,deallocated,"[5, 'Beatriz', 'manager']",2019-05-27 02:18:55.338654
+high,"[18, 'Jimmie']",2019-05-27 02:18:53.678400,deallocated,"[6, 'Tove', 'manager']",2019-05-27 02:18:55.739267
+high,"[64, 'Daveen']",2019-05-27 02:18:53.929572,deallocated,"[7, 'Jedediah', 'director']",2019-05-27 02:18:55.939749
+high,"[15, 'Dasie']",2019-05-27 02:18:54.356044,deallocated,"[4, 'Granville', 'manager']",2019-05-27 02:18:56.656573
+high,"[6, 'Birgit']",2019-05-27 02:18:54.696826,deallocated,"[5, 'Beatriz', 'manager']",2019-05-27 02:18:57.453132
+low,"[77, 'Garald']",2019-05-27 02:18:54.883888,deallocated,"[1, 'Rosaline', 'junior']",2019-05-27 02:18:57.856754
+high,"[10, 'Greg']",2019-05-27 02:18:55.041086,deallocated,"[6, 'Tove', 'manager']",2019-05-27 02:18:58.058992
