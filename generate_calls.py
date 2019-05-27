@@ -2,7 +2,7 @@
  the author : AtaaEddin, https://github.com/AtaaEddin/Fire-Station-Problem
  create at : 25 May, 2019
 
- description : 
+ description : this script simulate and generate calls to the fire-station department 
 	
 """
 import pandas as pd
@@ -12,7 +12,10 @@ import time
 from threading import Thread
 
 class CallsGenerator():
-	"""docstring for CallsGenerator"""
+	"""
+		Generate consecutive calls. It uses fake callers' ids and information then 
+		sends call as json file.This class open stream of calls using threading.  
+	"""
 	fake_callers = "./data/registers/callers.csv"
 
 	def __init__(self, queue, lowest_interval,highest_interval, high_proirity_chance=.2):
@@ -24,12 +27,18 @@ class CallsGenerator():
 		self.callers = pd.read_csv(self.fake_callers, index_col=None)
 
 	def _assign_caller(self):
+		"""
+			this function get fake callers' informations
+		"""
 		caller_idx = random.randint(0,len(self.callers)-1)
 		caller = self.callers.iloc[caller_idx]
 		
 		return [caller["id"],caller["first_name"]]
 
 	def _set_call_priority(self):
+		"""
+			sets the priority of the call randomly.
+		"""
 		priority = None
 		if random.random() <= self.high_proirity_chance:
 			return "high"
@@ -37,6 +46,10 @@ class CallsGenerator():
 		return "low"
 
 	def _create_call(self):
+		"""
+			creates on call as json file
+		"""
+
 		call = {
 						"priority": self._set_call_priority(),
 						"caller": self._assign_caller(),
@@ -50,6 +63,9 @@ class CallsGenerator():
 		return call
 
 	def generate(self):
+		"""
+			continuously generates calls and appends it inside a shared queue
+		"""
 		while True:
 			interval = random.uniform(self.lowest_interval,self.highest_interval)
 			time.sleep(interval)
@@ -63,7 +79,7 @@ class CallsGenerator():
 		t.start()
 		return t
 
-
+# for testing purposes
 if __name__ == '__main__':
 	from collections import deque
 	q = deque()

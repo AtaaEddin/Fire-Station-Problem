@@ -36,7 +36,7 @@ calls_q = deque()
 LOWEST_TIME_INTERVAL = 0 # in sec
 HIGHEST_TIME_INTERVAL = 1.5
 
-HIGH_PRIORITY_CALLS_RATIO = .5 # %20 of calls are high-priority
+HIGH_PRIORITY_CALLS_RATIO = .2 # %20 of calls are high-priority
 
 # all records are holded and saved to csv files 
 calls_dir = "./data/registers/calls.csv"
